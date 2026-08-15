@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom' 
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import Pastes from './components/Pastes'
-import ViewPastes from './components/ViewPastes'
-import EditPaste from './components/EditPaste';
-
+import { useState } from "react";
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Pastes from "./components/Pastes";
+import ViewPastes from "./components/ViewPastes";
+import EditPaste from "./components/EditPaste";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: (
       <div>
         <Navbar />
@@ -18,8 +17,10 @@ const router = createBrowserRouter([
       </div>
     ),
   },
+
+  // hello
   {
-    path: '/pastes',
+    path: "/pastes",
     element: (
       <div>
         <Navbar />
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/pastes/:id',
+    path: "/pastes/:id",
     element: (
       <div>
         <Navbar />
@@ -37,22 +38,20 @@ const router = createBrowserRouter([
     ),
   },
   {
-  path: '/pastes/edit/:id',
-  element: (
-    <div>
-      <Navbar />
-      <EditPaste />
-    </div>
-  ),
-},
-])
+    path: "/pastes/edit/:id",
+    element: (
+      <div>
+        <Navbar />
+        <EditPaste />
+      </div>
+    ),
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  return (
-    <RouterProvider router={router} />
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
